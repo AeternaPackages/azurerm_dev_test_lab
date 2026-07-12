@@ -23,6 +23,8 @@ Nested dev_test_linux_virtual_machines (azurerm_dev_test_linux_virtual_machine):
         - disallow_public_ip_address
         - notes
         - password
+        - password_key_vault_id (alternative to password - read from Key Vault instead)
+        - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
         - ssh_key
         - tags
         - inbound_nat_rule (block)
@@ -66,6 +68,8 @@ Nested dev_test_windows_virtual_machines (azurerm_dev_test_windows_virtual_machi
         - location
         - name
         - password
+        - password_key_vault_id (alternative to password - read from Key Vault instead)
+        - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
         - resource_group_name
         - size
         - storage_type
@@ -85,20 +89,22 @@ EOT
     resource_group_name = string
     tags                = optional(map(string))
     dev_test_linux_virtual_machines = optional(map(object({
-      lab_subnet_name            = string
-      lab_virtual_network_id     = string
-      location                   = string
-      name                       = string
-      resource_group_name        = string
-      size                       = string
-      storage_type               = string
-      username                   = string
-      allow_claim                = optional(bool) # Default: true
-      disallow_public_ip_address = optional(bool)
-      notes                      = optional(string)
-      password                   = optional(string)
-      ssh_key                    = optional(string)
-      tags                       = optional(map(string))
+      lab_subnet_name                = string
+      lab_virtual_network_id         = string
+      location                       = string
+      name                           = string
+      resource_group_name            = string
+      size                           = string
+      storage_type                   = string
+      username                       = string
+      allow_claim                    = optional(bool) # Default: true
+      disallow_public_ip_address     = optional(bool)
+      notes                          = optional(string)
+      password                       = optional(string)
+      password_key_vault_id          = optional(string)
+      password_key_vault_secret_name = optional(string)
+      ssh_key                        = optional(string)
+      tags                           = optional(map(string))
       gallery_image_reference = object({
         offer     = string
         publisher = string
@@ -161,19 +167,21 @@ EOT
       }))
     })))
     dev_test_windows_virtual_machines = optional(map(object({
-      lab_subnet_name            = string
-      lab_virtual_network_id     = string
-      location                   = string
-      name                       = string
-      password                   = string
-      resource_group_name        = string
-      size                       = string
-      storage_type               = string
-      username                   = string
-      allow_claim                = optional(bool) # Default: true
-      disallow_public_ip_address = optional(bool)
-      notes                      = optional(string)
-      tags                       = optional(map(string))
+      lab_subnet_name                = string
+      lab_virtual_network_id         = string
+      location                       = string
+      name                           = string
+      password                       = string
+      password_key_vault_id          = optional(string)
+      password_key_vault_secret_name = optional(string)
+      resource_group_name            = string
+      size                           = string
+      storage_type                   = string
+      username                       = string
+      allow_claim                    = optional(bool) # Default: true
+      disallow_public_ip_address     = optional(bool)
+      notes                          = optional(string)
+      tags                           = optional(map(string))
       gallery_image_reference = object({
         offer     = string
         publisher = string
