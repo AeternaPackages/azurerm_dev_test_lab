@@ -105,10 +105,10 @@ EOT
         sku       = string
         version   = string
       })
-      inbound_nat_rule = optional(object({
+      inbound_nat_rule = optional(list(object({
         backend_port = number
         protocol     = string
-      }))
+      })))
     })))
     dev_test_policies = optional(map(object({
       evaluator_type      = string
@@ -151,10 +151,10 @@ EOT
       tags                = optional(map(string))
       subnet = optional(object({
         shared_public_ip_address = optional(object({
-          allowed_ports = optional(object({
+          allowed_ports = optional(list(object({
             backend_port       = optional(number)
             transport_protocol = optional(string)
-          }))
+          })))
         }))
         use_in_virtual_machine_creation = optional(string) # Default: "Allow"
         use_public_ip_address           = optional(string) # Default: "Allow"
@@ -180,10 +180,10 @@ EOT
         sku       = string
         version   = string
       })
-      inbound_nat_rule = optional(object({
+      inbound_nat_rule = optional(list(object({
         backend_port = number
         protocol     = string
-      }))
+      })))
     })))
   }))
 
