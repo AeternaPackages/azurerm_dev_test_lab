@@ -1,4 +1,9 @@
 # --- azurerm_dev_test_lab ---
+output "dev_test_labs_id" {
+  description = "Map of id values across all dev_test_labs, keyed the same as var.dev_test_labs"
+  value       = module.dev_test_labs.dev_test_labs_id
+}
+
 output "dev_test_labs_artifacts_storage_account_id" {
   description = "Map of artifacts_storage_account_id values across all dev_test_labs, keyed the same as var.dev_test_labs"
   value       = module.dev_test_labs.dev_test_labs_artifacts_storage_account_id
@@ -50,6 +55,11 @@ output "dev_test_labs_unique_identifier" {
 }
 
 # --- azurerm_dev_test_linux_virtual_machine ---
+output "dev_test_linux_virtual_machines_id" {
+  description = "Map of id values across all dev_test_linux_virtual_machines, keyed the same as var.dev_test_linux_virtual_machines"
+  value       = module.dev_test_linux_virtual_machines.dev_test_linux_virtual_machines_id
+}
+
 output "dev_test_linux_virtual_machines_allow_claim" {
   description = "Map of allow_claim values across all dev_test_linux_virtual_machines, keyed the same as var.dev_test_linux_virtual_machines"
   value       = module.dev_test_linux_virtual_machines.dev_test_linux_virtual_machines_allow_claim
@@ -147,6 +157,11 @@ output "dev_test_linux_virtual_machines_username" {
 }
 
 # --- azurerm_dev_test_policy ---
+output "dev_test_policies_id" {
+  description = "Map of id values across all dev_test_policies, keyed the same as var.dev_test_policies"
+  value       = module.dev_test_policies.dev_test_policies_id
+}
+
 output "dev_test_policies_description" {
   description = "Map of description values across all dev_test_policies, keyed the same as var.dev_test_policies"
   value       = module.dev_test_policies.dev_test_policies_description
@@ -193,6 +208,11 @@ output "dev_test_policies_threshold" {
 }
 
 # --- azurerm_dev_test_schedule ---
+output "dev_test_schedules_id" {
+  description = "Map of id values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = module.dev_test_schedules.dev_test_schedules_id
+}
+
 output "dev_test_schedules_daily_recurrence" {
   description = "Map of daily_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
   value       = module.dev_test_schedules.dev_test_schedules_daily_recurrence
@@ -254,6 +274,11 @@ output "dev_test_schedules_weekly_recurrence" {
 }
 
 # --- azurerm_dev_test_virtual_network ---
+output "dev_test_virtual_networks_id" {
+  description = "Map of id values across all dev_test_virtual_networks, keyed the same as var.dev_test_virtual_networks"
+  value       = module.dev_test_virtual_networks.dev_test_virtual_networks_id
+}
+
 output "dev_test_virtual_networks_description" {
   description = "Map of description values across all dev_test_virtual_networks, keyed the same as var.dev_test_virtual_networks"
   value       = module.dev_test_virtual_networks.dev_test_virtual_networks_description
@@ -290,6 +315,11 @@ output "dev_test_virtual_networks_unique_identifier" {
 }
 
 # --- azurerm_dev_test_windows_virtual_machine ---
+output "dev_test_windows_virtual_machines_id" {
+  description = "Map of id values across all dev_test_windows_virtual_machines, keyed the same as var.dev_test_windows_virtual_machines"
+  value       = module.dev_test_windows_virtual_machines.dev_test_windows_virtual_machines_id
+}
+
 output "dev_test_windows_virtual_machines_allow_claim" {
   description = "Map of allow_claim values across all dev_test_windows_virtual_machines, keyed the same as var.dev_test_windows_virtual_machines"
   value       = module.dev_test_windows_virtual_machines.dev_test_windows_virtual_machines_allow_claim
