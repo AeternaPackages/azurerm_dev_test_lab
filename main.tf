@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.dev_test_labs : {
       for k2, v2 in coalesce(v1.dev_test_linux_virtual_machines, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lab_name = module.dev_test_labs.dev_test_labs["${k1}"].name
+        lab_name = module.dev_test_labs.dev_test_labs_name["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.dev_test_labs : {
       for k2, v2 in coalesce(v1.dev_test_policies, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lab_name = module.dev_test_labs.dev_test_labs["${k1}"].name
+        lab_name = module.dev_test_labs.dev_test_labs_name["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.dev_test_labs : {
       for k2, v2 in coalesce(v1.dev_test_schedules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lab_name = module.dev_test_labs.dev_test_labs["${k1}"].name
+        lab_name = module.dev_test_labs.dev_test_labs_name["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.dev_test_labs : {
       for k2, v2 in coalesce(v1.dev_test_virtual_networks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lab_name = module.dev_test_labs.dev_test_labs["${k1}"].name
+        lab_name = module.dev_test_labs.dev_test_labs_name["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.dev_test_labs : {
       for k2, v2 in coalesce(v1.dev_test_windows_virtual_machines, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lab_name = module.dev_test_labs.dev_test_labs["${k1}"].name
+        lab_name = module.dev_test_labs.dev_test_labs_name["${k1}"]
       })
     }
   ]...)
