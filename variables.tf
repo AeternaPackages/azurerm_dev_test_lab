@@ -97,7 +97,7 @@ EOT
       size                           = string
       storage_type                   = string
       username                       = string
-      allow_claim                    = optional(bool) # Default: true
+      allow_claim                    = optional(bool)
       disallow_public_ip_address     = optional(bool)
       notes                          = optional(string)
       password                       = optional(string)
@@ -132,10 +132,10 @@ EOT
       resource_group_name = string
       task_type           = string
       time_zone_id        = string
-      status              = optional(string) # Default: "Disabled"
+      status              = optional(string)
       tags                = optional(map(string))
       notification_settings = object({
-        status          = optional(string) # Default: "Disabled"
+        status          = optional(string)
         time_in_minutes = optional(number)
         webhook_url     = optional(string)
       })
@@ -162,8 +162,8 @@ EOT
             transport_protocol = optional(string)
           })))
         }))
-        use_in_virtual_machine_creation = optional(string) # Default: "Allow"
-        use_public_ip_address           = optional(string) # Default: "Allow"
+        use_in_virtual_machine_creation = optional(string)
+        use_public_ip_address           = optional(string)
       }))
     })))
     dev_test_windows_virtual_machines = optional(map(object({
@@ -178,7 +178,7 @@ EOT
       size                           = string
       storage_type                   = string
       username                       = string
-      allow_claim                    = optional(bool) # Default: true
+      allow_claim                    = optional(bool)
       disallow_public_ip_address     = optional(bool)
       notes                          = optional(string)
       tags                           = optional(map(string))
